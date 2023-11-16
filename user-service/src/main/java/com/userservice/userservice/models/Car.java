@@ -9,4 +9,5 @@ import lombok.Setter;
 public class Car {
     private String marca;
     private String modelo;
+    private int userId;
 }

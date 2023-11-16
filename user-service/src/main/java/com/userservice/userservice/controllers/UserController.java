@@ -59,4 +59,16 @@ public class UserController {
         List<Motorcycle> motorcycles = userService.getMotorcycles(userId);
         return ResponseEntity.ok(motorcycles);
     }
+
+    @PostMapping("/car/{userId}")
+    public ResponseEntity<Car> saveCar(@PathVariable("userId") int userId, @RequestBody Car car){
+        Car newCar = userService.saveCar(userId, car);
+        return ResponseEntity.ok(newCar);
+    }
+
+    @PostMapping("/motorcycle/{userId}")
+    public ResponseEntity<Motorcycle> saveMotorcycle(@PathVariable("userId") int userId, @RequestBody Motorcycle motorcycle){
+        Motorcycle newMotorcycle = userService.saveMoto(userId, motorcycle);
+        return  ResponseEntity.ok(newMotorcycle);
+    }
 }
